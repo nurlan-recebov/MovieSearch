@@ -2,12 +2,28 @@ const input = document.querySelector('input');
 const button = document.querySelector('button');
 const moviesContent = document.querySelector('.movies');
 button.addEventListener('click', getMovies)
+
+input.addEventListener('keydown', function (e) {
+    if(e.key === 'Enter') {
+        getMovies();
+    }
+
+})
 function getMovies() {
-    const searchTerm = input.value;
+    
+       const searchTerm = input.value.trim();
+           if (!searchTerm) return;
+
+
+    if (!searchTerm) return;
     fetch(`https://www.omdbapi.com/?apikey=11e06312&s=${searchTerm}`)
         .then(response => response.json())
         .then(data => {
-            show(data.Search);
+             if (data.Search) {
+        show(data.Search);
+    } else {
+        moviesContent.innerHTML = '<h2>Film tapilmadi</h2>';
+    }
 })        .catch(error => {
             console.error('Error fetching data:', error);
         })}

@@ -4,9 +4,9 @@ body{
     margin: 0;
     padding: 20px;
 }
-h1 {
+h1 ,h2, h3, h4, h5, h6 {
     text-align: center;
-    color: #333;
+    color:hsl(0, 0%, 80%);
 }
 input[type="text"] {
     width: 60%;
@@ -30,13 +30,15 @@ button {
 button:hover {
     background: linear-gradient(135deg, #00c8c8, #5a2bff);
 }
-.container{
+.search{
     display: flex;
     flex-wrap: wrap;
     justify-content: center;
     gap: 10px;
     width: 100%;
-    margin-top: 20px;}
+    margin-top: 20px;
+
+}
     .movies{
         display: flex;
         flex-wrap: wrap;
@@ -56,11 +58,7 @@ button:hover {
    box-sizing: border-box;
  
 }
-h4 h1{
-    margin: 10px 0;
-    color: #ccc;
 
-}
 .card img {
     width: 280px;
     height: 450px;
